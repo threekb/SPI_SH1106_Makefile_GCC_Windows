@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // 编译任务
+        {
+            "type": "shell",
+            "label": "build",
+            "command": "make -j 16",
+            "args": [],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        // 清理任务
+        {
+            "type": "shell",
+            "label": "clean",
+            "command": "make clean",
+            "args": [],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        // 烧录任务
+        {
+            "type": "shell",
+            "label": "flash",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/cmsis-dap.cfg",
+                "-f",
+                "target/stm32f4x.cfg",
+                "-c",
+                "adapter speed 14000; init; halt; program build/${workspaceRootFolderName}.elf verify reset exit"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+        },
+        // 编译并烧录任务
+        {
+            "type": "shell",
+            "label": "build and flash",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "build",
+                "flash"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}

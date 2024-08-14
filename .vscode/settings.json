@@ -1,0 +1,30 @@
+{
+    "VsCodeTaskButtons.showCounter": true,
+    "VsCodeTaskButtons.tasks": [
+        {
+            "label": "$(tools) Build",
+            "task": "build",
+            "tooltip": "build"
+        },
+        {
+            "label": "$(notebook-delete-cell) Clean",
+            "task": "clean",
+            "tooltip": "clean"
+        },
+        {
+            "label": "$(zap) Flash",
+            "task": "flash",
+            "tooltip": "flash"
+        },
+        {
+            "label": "$(tools) & $(zap) Build & Flash",
+            "task": "build and flash",
+            "tooltip": "build & flash"
+        }
+    ],
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "C_Cpp.default.cStandard": "c99",
+    "C_Cpp.default.compilerPath": "E:/Toolchain/xpack-arm-none-eabi-gcc-13.2.1-1.1-win32-x64/xpack-arm-none-eabi-gcc-13.2.1-1.1/bin/arm-none-eabi-gcc.exe"
+}
